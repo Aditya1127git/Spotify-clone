@@ -161,12 +161,9 @@ p{
     font-weight:bold;
     font-size: 17px;
 }
-.spotifyPlaylists{
-    position: relative;
-}
 
 .playbar{
-    bottom: 0;
+    bottom:0;
     position:absolute;
     background-color: rgb(139,293,139);
     width: 100%;

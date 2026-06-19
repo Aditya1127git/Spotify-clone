@@ -1,6 +1,6 @@
-async function main() {
+async function getSongs() {
     console.log("NEW CODE RUNNING");
-    let a = await fetch("http://127.0.0.1:8080/songs/")
+    let a = await fetch("http://127.0.0.1:3000/songs/")
     let response = await a.text()
 
     let div = document.createElement("div")
@@ -11,10 +11,19 @@ async function main() {
     for (let index = 0; index < as.length; index++){
         const element = as[index];
         if(element.href.endsWith("mp3")){
-            songs.push(element.href)
+            songs.push(element.getAttribute("href"))
         }
     }
-    console.log(songs)
+    return songs
+}
+
+async function main(){
+    let songs = await getSongs()
+    console.log("FIRST SONG =", songs[0])
+
+    var audio = new Audio(songs[1]);
+    audio.play();
+    audio.pause();
 }
 
 main()
