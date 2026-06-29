@@ -175,3 +175,11 @@ p{
     justify-content: center;
     gap: 10px;
 }
+
+.songList ul{
+    padding: 0 42px;
+}
+
+.songList li{
+    list-style-type: decimal;
+}
